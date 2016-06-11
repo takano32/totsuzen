@@ -1,9 +1,7 @@
-# -*- coding:utf-8 -*-
-
 require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
 describe Totsuzen do
-  it { Totsuzen::VERSION.should eq '0.0.5' }
+  it { expect(Totsuzen::VERSION).to eq '0.0.5' }
 
   describe "totsuzen method" do
     it 'make totsuzen in English' do
@@ -12,7 +10,7 @@ describe Totsuzen do
 ＞　hoge　＜
 ￣Y^Y^Y￣
       EOT
-      "hoge".totsuzen.should == t.chomp
+      expect("hoge".totsuzen).to eq t.chomp
     end
 
     it 'make totsuzen in Japanaes' do
@@ -21,7 +19,7 @@ describe Totsuzen do
 ＞　こんまめ　＜
 ￣Y^Y^Y^Y^Y￣
       EOT
-      "こんまめ".totsuzen.should == t.chomp
+      expect("こんまめ".totsuzen).to eq t.chomp
     end
   end
 
@@ -34,7 +32,7 @@ describe Totsuzen do
 ￣Y^Y^Y￣
       EOT
       result.totsuzen!
-      result.should == t.chomp
+      expect(result).to eq t.chomp
     end
 
     it 'make totsuzen! in Japanes' do
@@ -45,7 +43,7 @@ describe Totsuzen do
 ￣Y^Y^Y^Y^Y￣
       EOT
       result.totsuzen!
-      result.should == t.chomp
+      expect(result).to eq t.chomp
     end
   end
 end
